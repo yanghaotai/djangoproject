@@ -4,7 +4,8 @@ import time
 import datetime
 from dateutil.relativedelta import relativedelta
 
-
+'''
+'''
 
 def res(amount,period,rate,rate1,repayment):
     # 贷款额为a，月利率为i，年利率为I，日利率为j，还款月数为n
@@ -93,6 +94,8 @@ def res(amount,period,rate,rate1,repayment):
 
 # s11 = res(1500000,360,'0',0.05635,'2')
 # print(s11)
+
+
 
 
 
