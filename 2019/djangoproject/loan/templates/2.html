@@ -1,0 +1,56 @@
+<!--
+输入项：
+借款金额
+借款期数
+利率方式下拉：月利率、年利率、日利率
+利率输入框
+贷款方式：等额本金、等额本息、等本等息
+非必填：放款日期、第一还款日
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<a>返回数据：</a><br>-->
+    <a>贷款金额：{{ amount }}</a><br>
+    <a>贷款期数：{{ period }}</a><br>
+    <!--<a>利率方式：{{ rate }}</a><br>-->
+    <a>利率方式：
+        {% if rate == '0' %}
+        <a>年利率</a>
+        {% elif rate == '1' %}
+        <a>月利率</a>
+        {% elif rate == '2'%}
+        <a>日利率</a>
+        {% endif %}
+    </a><br>
+
+    <a>利率：{{ rate1 }}</a><br>
+    <!--<a>还款方式：{{ repayment }}</a><br>-->
+    <a>还款方式：
+        {% if repayment == '0' %}
+        <a>等额本金</a>
+        {% elif repayment == '1' %}
+        <a>等额本息</a>
+        {% elif repayment == '2' %}
+        <a>等本等息</a>
+        {% endif %}
+    </a><br>
+
+    <!--<a>放款日期：{{ date1 }}</a><br>-->
+    <!--<a>首次还款日：{{ date2 }}</a><br>-->
+    <br>
+    <a>计算结果：<br>
+        <a>总利息：{{ lx }}</a><br>
+        {% for i in re %}
+        {{ i }}<br>
+        {% endfor %}
+    </a><br>
+
+</head>
+<body>
+
+</body>
+</html>

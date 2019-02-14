@@ -1,0 +1,45 @@
+<!--
+输入项：
+借款金额
+借款期数
+利率方式下拉：月利率、年利率、日利率
+利率输入框
+贷款方式：等额本金、等额本息、等本等息
+非必填：放款日期、第一还款日
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <form method="post" action="/loan_action/">
+
+            贷款金额：<input name="amount" type="number" ><br>
+            贷款期数：<input name="period" type="number" min = '1'><br>
+            利率方式：
+            <select name="rate">
+            <option value="0">年利率</option>
+            <option value="1">月利率</option>
+            <option value="2">日利率</option>
+            </select>
+            <input name="rate1" type="float" min="0.00001" max ="100.00000" step="0.00001"><br>
+            还款方式：
+            <select name="repayment">
+            <option value="0">等额本金</option>
+            <option value="1">等额本息</option>
+            <option value="2">等本等息</option>
+            </select><br>
+            <!--放款日期：-->
+            <!--<input name="date1" type="date" value=""/><br>-->
+            <!--首次还款日：-->
+            <!--<input name="date2" type="date" value=""/><br>-->
+            <button id="btn" type="submit">计算</button>
+
+        </form>
+
+</head>
+<body>
+
+</body>
+</html>
