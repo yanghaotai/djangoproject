@@ -27,5 +27,8 @@ urlpatterns = [
     # url(r'^accounts/login/$', views.index),
     url(r'^loan/$', views.loan),
     url(r'^loan_action/$', views.loan_action),
-
+    url(r'^idcard/$', views.idcard),
+    url(r'^idcard_action/$', views.idcard_action),
+    url(r'^ifidcard/$', views.ifidcard),
+    url(r'^ifidcard_action/$', views.ifidcard_action),
 ]

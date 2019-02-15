@@ -3,6 +3,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from loan.loan2 import res
+from loan.idcard import idcard_generator,check_true
 
 # Create your views here.
 # def index(request):
@@ -40,3 +41,22 @@ def loan_action(request):
 # s = Loan(1500000,360,0,0.05635,2)
 # print(s.date1,s.date2)
 # print(s.res())
+
+def idcard(request):
+    return render(request, 'idcard.html')
+
+def idcard_action(request):
+    # print("dsssssssss")
+    if request.method == 'POST':
+        idcard = idcard_generator()
+    return render(request,'idcard.html',{'idcard':idcard})
+
+def ifidcard(request):
+    return render(request, 'ifidcard.html')
+
+def ifidcard_action(request):
+    # print("dsssssssss")
+    if request.method == 'POST':
+        idcard = request.POST.get('idcard', '')
+        ifidcard = check_true(idcard)
+    return render(request,'ifidcard.html',{'idcard':idcard,'ifidcard':ifidcard})
