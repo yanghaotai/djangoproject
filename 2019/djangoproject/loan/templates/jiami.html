@@ -13,7 +13,24 @@
             渠道类型(channelType):<input name="channelType" type="text" ><br>
             交易说明(transDesc):<input name="transDesc" type="text" ><br>
             主体id(businessId):<input name="businessId" type="text" ><br>
-            账户类型(cashierType):<input name="cashierType" type="text" ><br>
+            账户类型(cashierType):
+            <select name="cashierType">
+            <option value="0">QP</option>
+            <option value="1">POS</option>
+            <option value="2">ONLINEBANK</option>
+            <option value="3">其他</option>
+            </select><br>
+
+            <!--<div>-->
+            <!--<input type="radio" name="cashierType" class="same" value='QP' >QP-->
+            <!--<input type="radio" name="cashierType" class="same" value='POS'>POS-->
+            <!--<input type="radio" name="cashierType" class="same" value='ONLINEBANK'>ONLINEBANK-->
+            <!--<input type="radio" name="cashierType" class="same others" value='其它'>其它-->
+            <!--<input type="text" name="cashierType">-->
+            <!--</div>-->
+
+
+
             <button id="btn" type="submit">加密</button>
 
         </form>

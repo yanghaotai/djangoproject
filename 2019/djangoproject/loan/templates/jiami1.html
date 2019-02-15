@@ -12,7 +12,18 @@
             渠道类型(channelType):{{ channelType }}<br>
             交易说明(transDesc):{{ transDesc }}<br>
             主体id(businessId):{{ businessId }}<br>
-            账户类型(cashierType):{{ cashierType }}<br>
+            账户类型(cashierType):
+                {% if cashierType == '0' %}
+                    <a>快捷(QP)</a>
+                {% elif cashierType == '1' %}
+                    <a>POS</a>
+                {% elif cashierType == '2' %}
+                    <a>网银转账(ONLINEBANK)</a>
+                {% elif cashierType == '3' %}
+                    <a>其他</a>
+                {% endif %}
+            <br>
+
             <br>
             时间戳:{{ timestamp }}<br>
             加密报文:{{ s }}<br>
