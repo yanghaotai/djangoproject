@@ -4,6 +4,11 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from loan.loan2 import res
 from loan.idcard import idcard_generator,check_true
+from loan.jiami import md5
+import random
+import time
+import json
+
 
 # Create your views here.
 # def index(request):
@@ -60,3 +65,24 @@ def ifidcard_action(request):
         idcard = request.POST.get('idcard', '')
         ifidcard = check_true(idcard)
     return render(request,'ifidcard.html',{'idcard':idcard,'ifidcard':ifidcard})
+
+def jiami(request):
+    return render(request, 'jiami.html')
+
+appid = '100000'
+key = '1234567890'
+num = random.randint(100,999)
+def jiami_action(request):
+    if request.method == 'POST':
+        timestamp = time.strftime("%Y%m%d%H%M%S", time.localtime()) + str(num)
+        channelType = request.POST.get('channelType', '')
+        transDesc = request.POST.get('transDesc', '')
+        businessId = request.POST.get('businessId', '')
+        cashierType = request.POST.get('cashierType', '')
+        data1 = {"transDesc":transDesc,"businessId":businessId,"channelType":channelType,"cashierType":cashierType}
+        print(data1)
+        s = appid + '&' + json.dumps(data1) + '&' + timestamp + '&' + key
+        sign = md5(s)
+        d = {'appId': appid, 'data': json.dumps(data1), 'sign': sign, 'timestamp': timestamp}
+        data = json.dumps(d)
+    return render(request,'jiami1.html',{'channelType':channelType,'transDesc':transDesc,'businessId':businessId,'cashierType':cashierType,'timestamp':timestamp,'s':s,'sign':sign,'data':data})
