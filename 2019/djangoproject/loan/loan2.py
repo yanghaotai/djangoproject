@@ -42,7 +42,8 @@ def res(amount,period,rate,rate1,repayment):
         for m in range(1, n + 1):
             f = (int(a) - d * (m - 1)) * i  # 每月应还利息
             g = d + f
-            ssss.append("第%d个月应还利息为%s,应还本金为%s,还款总额(本金+利息)为%s"%(m,round(f,2),round(d,2),round(g,2)))
+            sa = int(a) - d * (m - 1)
+            ssss.append("第%d个月应还利息为%s,应还本金为%s,还款总额(本金+利息)为%s,剩余本金%s"%(m,round(f,2),round(d,2),round(g,2),round(sa,2)))
             s += f
         print("等额本金总利息:", round(s, 2))
         zlx = round(s, 2)

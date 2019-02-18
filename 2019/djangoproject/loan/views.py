@@ -14,15 +14,16 @@ import json
 # def index(request):
 #     return HttpResponse("Hello Django!")
 
+#首页
 def index(request):
     return render(request,'index.html')
 
 
-
+#贷款主页
 def loan(request):
     return render(request, '1.html')
 
-
+#贷款结果页面
 def loan_action(request):
     # print("dsssssssss")
     if request.method == 'POST':
@@ -47,18 +48,22 @@ def loan_action(request):
 # print(s.date1,s.date2)
 # print(s.res())
 
+#身份证主页
 def idcard(request):
     return render(request, 'idcard.html')
 
+#随机生成身份证号
 def idcard_action(request):
     # print("dsssssssss")
     if request.method == 'POST':
         idcard = idcard_generator()
     return render(request,'idcard.html',{'idcard':idcard})
 
+#检查是否是身份证号码主页
 def ifidcard(request):
     return render(request, 'ifidcard.html')
 
+#检查是否是身份证号码结果页
 def ifidcard_action(request):
     # print("dsssssssss")
     if request.method == 'POST':
@@ -66,9 +71,11 @@ def ifidcard_action(request):
         ifidcard = check_true(idcard)
     return render(request,'ifidcard.html',{'idcard':idcard,'ifidcard':ifidcard})
 
+#加密主页
 def jiami(request):
     return render(request, 'jiami.html')
 
+#加密结果
 appid = '100000'
 key = '1234567890'
 num = random.randint(100,999)
