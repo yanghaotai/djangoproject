@@ -64,12 +64,12 @@ def res(amount,period,rate,rate1,repayment):
         e1 = Y - c1
         # 剩余本金
         a1 = int(a) - (b - c1)
-        ssss.append("第1个月应还利息为%s,应还本金为%s,还款总额(本金+利息)为%s" % (round(c1, 2), round(b - c1, 2), round(b, 2)))
+        ssss.append("第1个月应还利息为%s,应还本金为%s,还款总额(本金+利息)为%s,剩余本金%s" % (round(c1, 2), round(b - c1, 2), round(b, 2),round(a1, 2)))
         # 第2 - n个月还款利息
         for t in range(2, n + 1):
             ci = (int(a) * i - b) * pow((1 + i), (t - 1)) + b
             bi = b - ci
-            ssss.append("第%d个月应还利息为%s,应还本金为%s,还款总额(本金+利息)为%s" % (t, round(ci, 2), round(bi, 2), round(b, 2)))
+            ssss.append("第%d个月应还利息为%s,应还本金为%s,还款总额(本金+利息)为%s,剩余本金%s" % (t, round(ci, 2), round(bi, 2), round(b, 2),round(a1, 2)))
 
         zlx = round(Y, 2)
         print(zlx)
