@@ -8,6 +8,7 @@ from loan.jiami import md5
 import random
 import time
 import json
+from loan.snake import gameOver,main
 
 
 # Create your views here.
@@ -93,3 +94,15 @@ def jiami_action(request):
         d = {'appId': appid, 'data': json.dumps(data1), 'sign': sign, 'timestamp': timestamp}
         data = json.dumps(d)
     return render(request,'jiami1.html',{'channelType':channelType,'transDesc':transDesc,'businessId':businessId,'cashierType':cashierType,'timestamp':timestamp,'s':s,'sign':sign,'data':data})
+
+
+#贪吃蛇主主页
+def snake(request):
+    return render(request, 'snake.html')
+
+#贪吃蛇游戏
+def snake_action(request):
+    # print("dsssssssss")
+    if request.method == 'POST':
+        # if __name__ == "__main__":
+        main()

@@ -33,4 +33,6 @@ urlpatterns = [
     url(r'^ifidcard_action/$', views.ifidcard_action),
     url(r'^jiami/$', views.jiami),
     url(r'^jiami_action/$', views.jiami_action),
+    url(r'^snake/$', views.snake),
+    url(r'^snake_action/$', views.snake_action),
 ]
