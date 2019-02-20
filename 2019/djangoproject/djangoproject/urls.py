@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from loan import views
+from loan import views,views1
 from django.conf.urls import url
 
 urlpatterns = [
@@ -35,4 +35,6 @@ urlpatterns = [
     url(r'^jiami_action/$', views.jiami_action),
     url(r'^snake/$', views.snake),
     url(r'^snake_action/$', views.snake_action),
+    url(r'^pizza/$', views1.pizza),
+    url(r'^pizza_action/$', views1.pizza_action),
 ]

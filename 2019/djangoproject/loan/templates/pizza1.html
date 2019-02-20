@@ -1,0 +1,20 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+            必胜客餐厅地址：<a href="http://www.pizzahut.com.cn/StoreList/Index" target="_blank">官网</a><br>
+            城市：{{ city }}<br>
+            查询结果：<br>
+            总计{{total}}家
+            {% for i in re %}
+            <li>{{ i }}<br></li>
+            {% endfor %}
+
+
+</body>
+</html>
