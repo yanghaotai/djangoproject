@@ -48,6 +48,7 @@ def get_stores(city):
         }
 
         response = session.post('http://www.pizzahut.com.cn/StoreList/Index', headers=headers, data=data, cookies=cookies)
+        # etree = html.etree
         html = etree.HTML(response.text)
         # 获取餐厅列表所在的 div 标签
 
@@ -84,7 +85,7 @@ def get_stores(city):
             break
         restaurants += temp_items
         page += 1
-        time.sleep(1)
+        time.sleep(2)
     return restaurants
 
 
